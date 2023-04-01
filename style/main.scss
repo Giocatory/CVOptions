@@ -1,0 +1,14 @@
+@import 'columnWidth';
+@import 'menuStyle';
+
+*, html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+}
