@@ -1,0 +1,54 @@
+.first-resume{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    color: #cedbfd;
+
+    .skills-contacts{
+        flex-grow: 0;
+        background-color: #1f5cf7;
+        height: 100vh;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar{
+            width: 0;
+        }
+
+        img{
+            display: block;
+            width: 5em;
+            margin: 0 auto;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            border-radius: 5px;
+        }
+
+        p{
+            background-color: #0d2666;
+            vertical-align: middle;
+            padding: .1em 1em ;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: .8em;
+        }
+
+        ul{
+            margin: 1em;
+        }
+
+        .contacts {
+            li {
+                display: flex;
+
+                .icon-for-li{
+                    width: 1em;
+                    margin: 0 .4em;
+                }
+            }
+        }
+    }
+
+    .experience{
+        flex-grow: 1;
+    }
+}

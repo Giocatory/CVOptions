@@ -1,8 +1,8 @@
 .tab {
     float: left;
-    border-right: 1px solid #000b2d;
-    background-color: #f1f1f1;
-    width: $col-1;
+    border-right: 1px solid #02ae79;
+    background-color: #2502B1;
+    width: $col-1 / 2;
     height: 100vh;
 
     button {
@@ -13,25 +13,48 @@
         width: 100%;
         border: none;
         outline: none;
-        text-align: left;
+        text-align: center;
         cursor: pointer;
         transition: 0.3s;
 
         &:hover {
-            background-color: #ddd;
-        }
+            background-color: #02AE79;
+            transition: .3s ease-in;
+            -webkit-transition: .3s ease-in;
+            -moz-transition: .3s ease-in;
+            -ms-transition: .3s ease-in;
+            -o-transition: .3s ease-in;
+}
 
         &.active {
-            background-color: #ccc;
+            background-color: #02AE79;
+            transition: .3s ease-in;
+            -webkit-transition: .3s ease-in;
+            -moz-transition: .3s ease-in;
+            -ms-transition: .3s ease-in;
+            -o-transition: .3s ease-in;
+}
+
+        img{
+            width: 2em;
+            text-align: center;
         }
-    }
+        transition: .3s ease-in;
+        -webkit-transition: .3s ease-in;
+        -moz-transition: .3s ease-in;
+        -ms-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
+}
 }
 .tabContent {
     float: left;
-    padding: 0px 12px;
-    border: 1px solid #ccc;
-    width: $col-11;
+    margin: 0;
+    width: $col-11 + ($col-1 / 2);
     border-left: none;
     height: 100vh;
     overflow-y: scroll;
+    
+    &::-webkit-scrollbar{
+        width: 0;
+    }
 }

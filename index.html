@@ -10,15 +10,76 @@
 </head>
 <body>
     <div class="tab">
-        <button class="tabLinks" onclick="openCity(event, 'ViewOne')">Вид 1</button>
-        <button class="tabLinks" onclick="openCity(event, 'ViewTwo')">Вид 2</button>
-        <button class="tabLinks" onclick="openCity(event, 'ViewThree')">Вид 3</button>
-        <button class="tabLinks" onclick="openCity(event, 'ViewFour')">Вид 4</button>
+        <button class="tabLinks" onclick="openCity(event, 'ViewOne')">
+            <img src="img/arrow-right.png" alt="arrow-right">
+        </button>
+        <button class="tabLinks" onclick="openCity(event, 'ViewTwo')">
+            <img src="img/arrow-right.png" alt="arrow-right">
+        </button>
+        <button class="tabLinks" onclick="openCity(event, 'ViewThree')">
+            <img src="img/arrow-right.png" alt="arrow-right">
+        </button>
+        <button class="tabLinks" onclick="openCity(event, 'ViewFour')">
+            <img src="img/arrow-right.png" alt="arrow-right">
+        </button>
     </div>
       
     <div id="ViewOne" class="tabContent">
-        <h3>ViewOne</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odit debitis consequatur enim molestiae excepturi neque facere recusandae adipisci quas libero error, sequi temporibus porro, maxime ullam soluta quidem architecto?</p>
+        <div class="first-resume">
+            <div class="skills-contacts">
+                <img src="img/DSC_0147.jpg" alt="author photo">
+                <p>контакты</p>
+                <ul class="contacts">
+                    <li>
+                        <img src="img/icons/free-icon-vibrating-phone-73552.png" alt="telephone icon" class="icon-for-li">
+                        <a href="#">+7 996 584 55 47</a>
+                    </li>
+                    <li>
+                        <img src="img/icons/free-icon-new-email-6570279.png" alt="email icon" class="icon-for-li">
+                        <a href="#">giocatory@yandex.ru</a>
+                    </li>
+                    <li>
+                        <img src="img/icons/free-icon-telegram-logo-87413.png" alt="telegramm icon" class="icon-for-li">
+                        <a href="#">https://t.me/Giocatory</a>
+                    </li>
+                    <li>
+                        <img src="img/icons/free-icon-github-733609.png" alt="github icon" class="icon-for-li">
+                        <a href="#">https://github.com/Giocatory</a>
+                    </li>
+                </ul>
+                <p>языки</p>
+                <ul>
+                    <li>английский</li>
+                    <li>В1 - Средний</li>
+                </ul>
+                <p>навыки</p>
+                <ul>
+                    <li>HTML, CSS</li>
+                    <li>JavaScript</li>
+                    <li>SQL</li>
+                    <li>React</li>
+                    <li>MongoDB</li>
+                    <li>REST, Linux</li>
+                    <li>Тестирование, ООП</li>
+                </ul>
+                <p>качества</p>
+                <ul>
+                    <li>Усидчивость</li>
+                    <li>Внимательность</li>
+                    <li>Педантичность</li>
+                    <li>Коммуникабельность</li>
+                </ul>
+                <p>Хобби</p>
+                <ul>
+                    <li>Чтение научной литературы</li>
+                    <li>Увлекаюсь BlockChain</li>
+                    <li>Инвестции</li>
+                    <li>Электроника</li>
+                </ul>
+            </div>
+
+            <div class="experience"></div>
+        </div>
     </div>
       
     <div id="ViewTwo" class="tabContent">
@@ -34,6 +95,6 @@
         <h3>ViewFours</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci fugit sunt sapiente voluptatibus eos nostrum delectus consectetur nobis voluptatum quas repellat repellendus repudiandae soluta dignissimos ad, possimus, aspernatur vel ipsa.</p>
     </div>
-    <script src="script/app.js"></script>
+    <script src="script/menuOpener.js"></script>
 </body>
 </html>

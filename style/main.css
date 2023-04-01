@@ -1,8 +1,8 @@
 .tab {
   float: left;
-  border-right: 1px solid #000b2d;
-  background-color: #f1f1f1;
-  width: 8.3333%;
+  border-right: 1px solid #02ae79;
+  background-color: #2502B1;
+  width: 4.16665%;
   height: 100vh;
 }
 .tab button {
@@ -13,25 +13,91 @@
   width: 100%;
   border: none;
   outline: none;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   transition: 0.3s;
+  transition: 0.3s ease-in;
+  -webkit-transition: 0.3s ease-in;
+  -moz-transition: 0.3s ease-in;
+  -ms-transition: 0.3s ease-in;
+  -o-transition: 0.3s ease-in;
 }
 .tab button:hover {
-  background-color: #ddd;
+  background-color: #02AE79;
+  transition: 0.3s ease-in;
+  -webkit-transition: 0.3s ease-in;
+  -moz-transition: 0.3s ease-in;
+  -ms-transition: 0.3s ease-in;
+  -o-transition: 0.3s ease-in;
 }
 .tab button.active {
-  background-color: #ccc;
+  background-color: #02AE79;
+  transition: 0.3s ease-in;
+  -webkit-transition: 0.3s ease-in;
+  -moz-transition: 0.3s ease-in;
+  -ms-transition: 0.3s ease-in;
+  -o-transition: 0.3s ease-in;
+}
+.tab button img {
+  width: 2em;
+  text-align: center;
 }
 
 .tabContent {
   float: left;
-  padding: 0px 12px;
-  border: 1px solid #ccc;
-  width: 91.6667%;
+  margin: 0;
+  width: 95.83335%;
   border-left: none;
   height: 100vh;
   overflow-y: scroll;
+}
+.tabContent::-webkit-scrollbar {
+  width: 0;
+}
+
+.first-resume {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  color: #cedbfd;
+}
+.first-resume .skills-contacts {
+  flex-grow: 0;
+  background-color: #1f5cf7;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.first-resume .skills-contacts::-webkit-scrollbar {
+  width: 0;
+}
+.first-resume .skills-contacts img {
+  display: block;
+  width: 5em;
+  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+.first-resume .skills-contacts p {
+  background-color: #0d2666;
+  vertical-align: middle;
+  padding: 0.1em 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.first-resume .skills-contacts ul {
+  margin: 1em;
+}
+.first-resume .skills-contacts .contacts li {
+  display: flex;
+}
+.first-resume .skills-contacts .contacts li .icon-for-li {
+  width: 1em;
+  margin: 0 0.4em;
+}
+.first-resume .experience {
+  flex-grow: 1;
 }
 
 *, html {
@@ -39,6 +105,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 * a, html a {
   text-decoration: none;

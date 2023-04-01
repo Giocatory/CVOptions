@@ -1,5 +1,6 @@
 @import 'columnWidth';
 @import 'menuStyle';
+@import 'firstResume';
 
 *, html{
     box-sizing: border-box;
@@ -11,4 +12,6 @@
         text-decoration: none;
         color: inherit;
     }
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
