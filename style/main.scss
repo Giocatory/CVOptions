@@ -1,6 +1,7 @@
 @import 'columnWidth';
 @import 'menuStyle';
 @import 'firstResume';
+@import 'experience';
 
 *, html{
     box-sizing: border-box;
@@ -14,4 +15,5 @@
     }
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #0f2b46;
 }

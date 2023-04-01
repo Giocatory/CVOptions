@@ -2,9 +2,8 @@
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    color: #cedbfd;
 
-    .skills-contacts{
+    .fr-skills-contacts{
         flex-grow: 0;
         background-color: #1f5cf7;
         height: 100vh;
@@ -14,16 +13,18 @@
             width: 0;
         }
 
-        img{
+        .fr-author-photo{
             display: block;
             width: 5em;
             margin: 0 auto;
             margin-top: 1em;
             margin-bottom: 1em;
             border-radius: 5px;
+            box-shadow: -1px 0 22px 3.5px #0d2666;
         }
 
         p{
+            color: #cedbfd;
             background-color: #0d2666;
             vertical-align: middle;
             padding: .1em 1em ;
@@ -34,21 +35,94 @@
 
         ul{
             margin: 1em;
+
+            li{
+                color: #cedbfd;
+            }
         }
 
-        .contacts {
+        .fr-contacts {
             li {
                 display: flex;
+                margin: .2em 0; 
 
-                .icon-for-li{
+                .fr-icon-for-li{
                     width: 1em;
                     margin: 0 .4em;
                 }
             }
         }
-    }
 
-    .experience{
-        flex-grow: 1;
+        .fr-languages {
+            display: flex;
+
+            li{
+                margin: 0 .2em;
+            }
+        }
+
+        .fr-skills{
+            li{
+                margin: .2em 0;
+                
+                &::before{
+                    content: " * ";
+                }
+
+                .fr-small-text{
+                    font-size: .7em;
+                    text-align: right;
+                }
+            }
+        }
+
+        .fr-quality, .fr-hobby{
+            li{
+                margin: .2em 0;
+                
+                &::before{
+                    content: " * ";
+                }
+            }
+        }
     }
+}
+
+/* For Chrome or Safari */
+progress::-webkit-progress-bar {
+    background-color: #cedbfd;
+}
+
+progress::-webkit-progress-value {
+    background-color: #0d2666 !important;
+}
+
+
+/* For Firefox */
+progress {
+    background-color: #cedbfd;
+}
+
+progress::-moz-progress-bar {
+    background-color: #0d2666 !important;
+}
+
+/* For IE10 */
+progress {
+    background-color: #cedbfd;
+}
+
+progress {
+    background-color: #0d2666;
+    border-radius: .3rem;
+    -webkit-border-radius: .3rem;
+    -moz-border-radius: .3rem;
+    -ms-border-radius: .3rem;
+    -o-border-radius: .3rem;
+}
+
+progress {
+    display: block;
+    width: 100%;
+    height: .5em;
 }
