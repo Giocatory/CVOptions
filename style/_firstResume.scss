@@ -1,3 +1,5 @@
+@import 'firstResumeColors';
+
 .first-resume{
     display: flex;
     align-items: flex-start;
@@ -5,7 +7,7 @@
 
     .fr-skills-contacts{
         flex-grow: 0;
-        background-color: #1f5cf7;
+        background-color: $fr-bc-color;
         height: 100vh;
         overflow-y: scroll;
 
@@ -20,12 +22,12 @@
             margin-top: 1em;
             margin-bottom: 1em;
             border-radius: 5px;
-            box-shadow: -1px 0 22px 3.5px #0d2666;
+            box-shadow: -1px 0 22px 3.5px $fr-box-shadow;
         }
 
         p{
-            color: #cedbfd;
-            background-color: #0d2666;
+            color: $fr-left-p-color;
+            background-color: $fr-left-p-bc;
             vertical-align: middle;
             padding: .1em 1em ;
             text-transform: uppercase;
@@ -37,7 +39,7 @@
             margin: 1em;
 
             li{
-                color: #cedbfd;
+                color: $fr-left-p-color;
             }
         }
 
@@ -90,30 +92,30 @@
 
 /* For Chrome or Safari */
 progress::-webkit-progress-bar {
-    background-color: #cedbfd;
+    background-color: $fr-left-p-color;
 }
 
 progress::-webkit-progress-value {
-    background-color: #0d2666 !important;
+    background-color: $fr-left-p-bc !important;
 }
 
 
 /* For Firefox */
 progress {
-    background-color: #cedbfd;
+    background-color: $fr-left-p-color;
 }
 
 progress::-moz-progress-bar {
-    background-color: #0d2666 !important;
+    background-color: $fr-left-p-bc !important;
 }
 
 /* For IE10 */
 progress {
-    background-color: #cedbfd;
+    background-color: $fr-left-p-color;
 }
 
 progress {
-    background-color: #0d2666;
+    background-color: $fr-left-p-bc;
     border-radius: .3rem;
     -webkit-border-radius: .3rem;
     -moz-border-radius: .3rem;
