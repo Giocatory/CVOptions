@@ -2,13 +2,17 @@
 
 .first-resume{
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     flex-wrap: wrap;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    background-color: $fr-right-p-bc;
 
     .fr-skills-contacts{
         flex-grow: 0;
         background-color: $fr-bc-color;
-        height: 100vh;
+        height: auto !important;
         overflow-y: scroll;
 
         &::-webkit-scrollbar{

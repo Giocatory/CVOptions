@@ -9,11 +9,15 @@
     padding: 0;
     overflow: hidden;
 
+    &::-webkit-scrollbar{
+        width: 0;
+    }
+
     a{
         text-decoration: none;
         color: inherit;
     }
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #0f2b46;
+    color: $fr-box-shadow;
 }

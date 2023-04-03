@@ -60,13 +60,17 @@
 
 .first-resume {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   flex-wrap: wrap;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: #cedbfd;
 }
 .first-resume .fr-skills-contacts {
   flex-grow: 0;
   background-color: #1f5cf7;
-  height: 100vh;
+  height: auto !important;
   overflow-y: scroll;
 }
 .first-resume .fr-skills-contacts::-webkit-scrollbar {
@@ -182,7 +186,6 @@ progress {
   margin-right: 0.5em;
 }
 .experience table {
-  border: 1px solid blue;
   width: 80vw;
   margin-top: 1em;
 }
@@ -192,7 +195,6 @@ progress {
   text-align: center;
   font-weight: bold;
   font-size: 1.5em;
-  border: 1px solid red;
 }
 .experience table hr {
   border-color: #0d2666;
@@ -213,7 +215,7 @@ progress {
   text-align: center;
 }
 .experience table tr td {
-  padding: 1em;
+  padding: 1em 5em;
 }
 .experience table tr td .fr-organization {
   font-weight: bold;
@@ -222,6 +224,9 @@ progress {
 .experience table tr td .fr-position {
   font-style: italic;
   line-height: 2em;
+}
+.experience table tr td .fr-student-prof::before {
+  content: "- ";
 }
 .experience table tr td ul li::before {
   content: "- ";
@@ -233,7 +238,10 @@ progress {
   padding: 0;
   overflow: hidden;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #0f2b46;
+  color: #0d2666;
+}
+*::-webkit-scrollbar, html::-webkit-scrollbar {
+  width: 0;
 }
 * a, html a {
   text-decoration: none;

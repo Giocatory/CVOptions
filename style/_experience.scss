@@ -20,7 +20,6 @@
     }
 
     table {
-        border: 1px solid blue;
         width: 80vw;
         margin-top: 1em;
 
@@ -30,7 +29,6 @@
             text-align: center;
             font-weight: bold;
             font-size: 1.5em;
-            border: 1px solid red;
         }
         hr{
             border-color: $fr-right-p-color;
@@ -53,7 +51,7 @@
                 text-align: center;
             }
             td{
-                padding: 1em;
+                padding: 1em 5em;
 
                 .fr-organization{
                     font-weight: bold;
@@ -63,9 +61,12 @@
                     font-style: italic;
                     line-height: 2em;
                 }
+                .fr-student-prof::before{
+                    content: "- ";
+                }
                 ul{
                     
-                    li::before{
+                    li::before {
                         content: "- ";
                     }
                 }
