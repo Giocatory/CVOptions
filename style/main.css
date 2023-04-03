@@ -168,6 +168,64 @@ progress {
 .experience {
   padding: 1em;
 }
+.experience h2 {
+  margin: 1em 0;
+}
+.experience .exp-location {
+  display: flex;
+}
+.experience .exp-location p {
+  margin: 1em 1em 0 0;
+}
+.experience .exp-location img {
+  width: 1em;
+  margin-right: 0.5em;
+}
+.experience table {
+  border: 1px solid blue;
+  width: 80vw;
+  margin-top: 1em;
+}
+.experience table th {
+  text-transform: uppercase;
+  color: #0d2666;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  border: 1px solid red;
+}
+.experience table hr {
+  border-color: #0d2666;
+  width: 60vw;
+  margin: 0 auto;
+  height: 0.3rem;
+  background-color: #0d2666;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+.experience table img {
+  width: 3em;
+}
+.experience table tr td:first-child {
+  text-align: center;
+}
+.experience table tr td {
+  padding: 1em;
+}
+.experience table tr td .fr-organization {
+  font-weight: bold;
+  line-height: 2em;
+}
+.experience table tr td .fr-position {
+  font-style: italic;
+  line-height: 2em;
+}
+.experience table tr td ul li::before {
+  content: "- ";
+}
 
 *, html {
   box-sizing: border-box;
