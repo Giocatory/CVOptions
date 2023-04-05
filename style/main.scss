@@ -20,4 +20,25 @@
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: $fr-box-shadow;
+
+
+    select{
+        border: none; 
+        background-color: #1f5cf7;
+        font-size: 1em;
+        color: #cedbfd;
+
+        &:active{
+            border: none;
+        }
+        &:hover{
+            border: none;
+        }
+        &:focus{
+            border: none;
+        }
+        &::after{
+            content: '';
+        }
+    }
 }

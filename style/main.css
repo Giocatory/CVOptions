@@ -245,4 +245,22 @@ progress {
 * a, html a {
   text-decoration: none;
   color: inherit;
+}
+* select, html select {
+  border: none;
+  background-color: #1f5cf7;
+  font-size: 1em;
+  color: #cedbfd;
+}
+* select:active, html select:active {
+  border: none;
+}
+* select:hover, html select:hover {
+  border: none;
+}
+* select:focus, html select:focus {
+  border: none;
+}
+* select::after, html select::after {
+  content: "";
 }/*# sourceMappingURL=main.css.map */
