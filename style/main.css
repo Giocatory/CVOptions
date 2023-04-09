@@ -1,3 +1,24 @@
+.dropdown {
+  margin: 0 auto;
+  margin-top: 25%;
+  width: 30rem;
+  padding: 2rem;
+  text-align: center;
+  background-color: aquamarine;
+  transition: transform 3s linear;
+  -webkit-transition: transform 3s linear;
+  -moz-transition: transform 3s linear;
+  -ms-transition: transform 3s linear;
+  -o-transition: transform 3s linear;
+}
+.dropdown:hover {
+  transform: translate(0, 5rem);
+  -webkit-transform: translate(0, 5rem);
+  -moz-transform: translate(0, 5rem);
+  -ms-transform: translate(0, 5rem);
+  -o-transform: translate(0, 5rem);
+}
+
 *, html {
   box-sizing: border-box;
   margin: 0;
@@ -11,4 +32,7 @@
 * a, html a {
   text-decoration: none;
   color: inherit;
+}
+* ul, html ul {
+  list-style: none;
 }/*# sourceMappingURL=main.css.map */
