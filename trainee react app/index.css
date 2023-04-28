@@ -8,8 +8,11 @@
     background-color: #EEE;
 }
 
-#container h1 {
+#container p {
     font-size: 144px;
     font-family: sans-serif;
     color: #0080A8;
+}
+#container p:last-child{
+    color: #014b62;
 }
