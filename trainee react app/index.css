@@ -1,0 +1,15 @@
+*, html{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#container {
+    padding: 50px;
+    background-color: #EEE;
+}
+
+#container h1 {
+    font-size: 144px;
+    font-family: sans-serif;
+    color: #0080A8;
+}
