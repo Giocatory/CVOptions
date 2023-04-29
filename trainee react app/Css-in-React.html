@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стили в Реакт</title>
+    <link rel="stylesheet" href="Css-in-React.css">
+    <!-- Connect React -->
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+
+    <style>
+        #container {
+            padding: 3rem;
+            background-color: #EEE;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+        let destination = document.querySelector("#container");
+
+        class Letters extends React.Component{
+            render() {
+                let letterStyle = {
+                    padding: 10,
+                    margin: 10,
+                    backgroundColor: this.props.bgcolor,
+                    color: "#333",
+                    display: "inline-block",
+                    fontFamily: "monospace",
+                    fontSize: 32,
+                    textAlign: "center",
+                };
+
+                return (
+                    <div style={letterStyle}>
+                        {this.props.children}
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <div>
+                <Letters bgcolor="#58B3FF">A</Letters>
+                <Letters bgcolor="#FF605F">E</Letters>
+                <Letters bgcolor="#FFD52E">I</Letters>
+                <Letters bgcolor="#49DD8E">O</Letters>
+                <Letters bgcolor="#AE99FF">Y</Letters>
+            </div>,
+            destination
+        )
+    </script>
+</body>
+</html>
