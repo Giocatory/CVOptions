@@ -11,31 +11,45 @@
     <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
 </head>
 <body>
 
     <div id="container"></div>
 
     <script type="text/babel">
-
         let destination = document.querySelector("#container");
 
+        // create components
         class HelloMyWorld extends React.Component {
             render(){
-                return <p>Hello world!</p>
+                return <p>Hello, {this.props.greetTarget}!</p>
+            }
+        }
+
+        class Buttoning extends React.Component {
+            render(){
+                return (
+                    <div>
+                        <button type={this.props.behavior}>
+                            {this.props.children}
+                        </button>
+                    </div>
+                )
             }
         }
 
         ReactDOM.render (
             //call class component
             <div>
-                <HelloMyWorld/>
-                <HelloMyWorld/>
-            </div>,
+                <HelloMyWorld greetTarget="Mikhail"/>
+                <div>
+                    <Buttoning behavior="submit">Send Data</Buttoning>
+                </div>
+            </div>
+            ,
             destination
         )
-
     </script>
 </body>
 </html>
