@@ -29,12 +29,15 @@
 
         class Display extends React.Component {
             render(){
+                // вернуть несколько элементов
+                // использовать React.Fragment
+                // или <></>
                 return(
-                    <div>
+                    <React.Fragment>
                         <p>{this.props.color}</p>
                         <p>{this.props.num}</p>
                         <p>{this.props.size}</p>
-                    </div>
+                    </React.Fragment>
                 )
             }
         }
@@ -50,9 +53,7 @@
         class Shirt extends React.Component{
             render() {
                 return(
-                    <div>
-                        <Label {...this.props}/>
-                    </div>
+                    <Label {...this.props}/>
                 )
             }
         }
