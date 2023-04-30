@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Состояния</title>
+    <link rel="stylesheet" href="Css-in-React.css">
+    <!-- Connect React -->
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+        let destination = document.querySelector("#container");
+
+        class LightningCounter extends React.Component{
+            constructor(props){
+                super(props);
+
+                // Определяем состояние счетчика
+                this.state = {
+                    strikes: 0
+                }
+
+                // подвязать изменение счетчика
+                this.timerTick = this.timerTick.bind(this)
+            }
+
+            // изменение состояния счетчика
+            timerTick(){
+                this.setState({
+                    strikes: this.state.strikes + 100
+                })
+            }
+
+            // Встроенный метод componentDidMount(), 
+            // который вызывается после того как объект рендерится (визуализируется)
+            componentDidMount(){
+                setInterval(this.timerTick, 1000);
+            }
+
+
+            // Визуализация
+            render() {
+                let counterStyle = {
+                    color: "#66FFFF",
+                    fontSize: 50,
+                }
+
+                let count = this.state.strikes.toLocaleString();
+
+                return (
+                    <h1 style={counterStyle}>{count}</h1>
+                )
+            }
+        }
+
+        class LightningCounterDisplay extends React.Component {
+            render() {
+                let commonStyle = {
+                    margin: 0,
+                    padding: 0,
+                }
+
+                let divStyle = {
+                    width: 250,
+                    textAlign: "center",
+                    backgroundColor: "#020202",
+                    padding: 40,
+                    fontFamily: "sans-serif",
+                    color: "#999",
+                    borderRadius: 10,
+                    margin: "0 auto",
+                    marginTop: "10%"
+                };
+
+                let textStyles = {
+                    emphasis: {
+                        fontSize: 38,
+                        ...commonStyle
+                    },
+
+                    smallEmphasis: {
+                        ...commonStyle
+                    },
+
+                    small: {
+                        fontSize: 17,
+                        opacity: 0.5,
+                        ...commonStyle
+                    }
+                }
+
+                return (
+                    <div style={divStyle}>
+                        <LightningCounter />
+                        <h2 style={textStyles.smallEmphasis}>ВСПЫШКИ МОЛНИЙ</h2>
+                        <p style={textStyles.small}>(с момента запуска кода)</p>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <LightningCounterDisplay />,
+            destination
+        )
+    </script>
+</body>
+</html>
