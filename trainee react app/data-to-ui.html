@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>От данных к Интерфейсу</title>
+    <link rel="stylesheet" href="Css-in-React.css">
+    <!-- Connect React -->
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+
+    <style>
+        #container {
+            padding: 50px;
+            background-color: #FFF;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+        let destination = document.querySelector("#container");
+
+        class Circle extends React.Component {
+            render() {
+                let circleStyle = {
+                    padding: 10,
+                    margin: 20,
+                    display: "inline-block",
+                    backgroundColor: this.props.bgColor,
+                    borderRadius: "50%",
+                    width: 100,
+                    height: 100,
+                }
+
+                return (
+                    <div style={circleStyle}></div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <div>
+                <Circle bgColor="#F9C240"/>
+            </div>,
+            destination
+        )
+    </script>
+</body>
+</html>
