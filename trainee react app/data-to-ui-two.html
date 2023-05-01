@@ -45,16 +45,17 @@
             }
         }
 
-        function showCircle(){
-            let colors = ["#393E41", "#E94F37", "#1C89BF", "#A1D363"]
-            let ran = Math.floor(Math.random() * colors.length);
+        const colors = ["#393E41", "#E94F37", "#1C89BF", "#A1D363", "#85FFC7", "#297373", "#FF8552", "#A40E4C"];
+        let renderData = [];
 
-            return <Circle bgColor={colors[ran]}/>
+        for (let i = 0; i < colors.length; i++) {
+            let color = colors[i];
+            renderData.push(<Circle key={i + color} bgColor={color}/>)
         }
 
         ReactDOM.render(
             <div>
-               {showCircle()} 
+                {renderData}
             </div>,
             destination
         )
