@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>События</title>
+    <link rel="stylesheet" href="Css-in-React.css">
+    <!-- Connect React -->
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+
+    <style>
+        #container {
+            padding: 50px;
+            background-color: #FFF;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+        let destination = document.querySelector("#container");
+        
+        class Counter extends React.Component {
+            render(){
+                let textStyle = {
+                    fontSize: "20px",
+                    fontFamily: "Helvetica",
+                    fontWeight: "bold",
+                    color: "#333",
+                }
+
+                return (
+                    <div style={textStyle}>
+                        {this.props.display}
+                    </div>
+                )
+            }
+        }
+
+        class CounterParent extends React.Component {
+            constructor(props) {
+                super(props);
+
+                this.state = {
+                    count: 0,
+                }
+
+                this.increase = this.increase.bind(this)
+                this.resetCount = this.resetCount.bind(this)
+            }
+
+            increase (e) {
+                let currentCount = this.state.count;
+
+                // если зажата клавиша Shift
+                if(e.shiftKey){
+                    currentCount += 10;
+                } else {
+                    currentCount += 1;
+                }
+
+                this.setState({ count: currentCount})
+            }
+
+            resetCount(e){
+                this.setState({count: this.state.count = 0})
+            }
+
+            render() {
+                let backgroundStyle = {
+                    padding: 50,
+                    backgroundColor: "#FFC53A",
+                    width: 250,
+                    height: 100,
+                    borderRadius: 10,
+                    textAlign: "center",
+                }
+
+                let buttonStyle = {
+                    fontSize: "1em",
+                    fontFamily: "sans-serif",
+                    fontWeight: "bold",
+                    color: "#333",
+                    width: 30,
+                    height: 30,
+                    lineHeight: "3px",
+                }
+
+                return (
+                    <div style={backgroundStyle}>
+                        <Counter display={this.state.count}/>
+                        <button style={buttonStyle} onClick={this.increase}>+</button>
+                        <button style={buttonStyle} onClick={this.resetCount}>R</button>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <CounterParent />,
+            destination
+        )
+    </script>
+</body>
+</html>
