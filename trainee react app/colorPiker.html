@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Палитра цветов</title>
+    <link rel="stylesheet" href="Css-in-React.css">
+    <!-- Connect React -->
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+
+    <style>
+        #container {
+            padding: 50px;
+            background-color: #FFF;
+        }
+        .colorSquare {
+            box-shadow: 0px 0px 25px 0px #333;
+            width: 242px;
+            height: 242px;
+            margin-bottom: 15px;
+        }
+        .colorArea input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+        }
+        .colorArea button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: #666;
+            color: #fff;
+            border: 2px solid #666;
+        }
+        .colorArea button:hover {
+            background-color: #111;
+            border-color: #111;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+        let destination = document.querySelector("#container");
+
+        class Colorizer extends React.Component {
+            constructor(props) {
+                super(props);
+
+                this.state = {
+                    color: "",
+                    bgColor: "white",
+                }
+
+                this.colorValue = this.colorValue.bind(this);
+                this.setNewColor = this.setNewColor.bind(this);
+            }
+
+            colorValue(e) {
+                this.setState({
+                    color: e.target.value,
+                })
+            }
+
+            setNewColor(e) {
+                this.setState({
+                    bgColor: this.state.color
+                })
+
+                e.preventDefault();
+            }
+
+            render() {
+                let squareStyle = {
+                    backgroundColor: this.state.bgColor,
+                }
+            
+
+                return (
+                    <div className="colorArea">
+                        <div style={squareStyle} className="colorSquare"></div>
+
+                        <form onSubmit={this.setNewColor}>
+                            <input onChange={this.colorValue} placeholder="color value"></input>
+                            <button type="submit">ok</button>    
+                        </form>
+                    </div>
+                )
+            }
+        }
+
+
+        ReactDOM.render(
+        <Colorizer/>,    
+        destination
+        );
+    </script>
+</body>
+</html>
