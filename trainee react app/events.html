@@ -24,6 +24,7 @@
 
     <div id="container"></div>
 
+    <!--обработка событий (счетчик)-->
     <script type="text/babel">
         let destination = document.querySelector("#container");
         
@@ -70,7 +71,15 @@
             }
 
             resetCount(e){
-                this.setState({count: this.state.count = 0})
+                let resetCount = 0;
+
+                if(e.shiftKey){
+                    resetCount += -10;
+                } else {
+                    resetCount = 0
+                }
+
+                this.setState({ count: resetCount })
             }
 
             render() {
