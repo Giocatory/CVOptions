@@ -42,10 +42,17 @@
             border-color: #111;
             cursor: pointer;
         }
+        #colorHeading{
+            padding: 0;
+            margin: 50px;
+            margin-bottom: -20px;
+            font-family: sans-serif;
+        }
     </style>
 </head>
 <body>
 
+    <h1 id="colorHeading">Палитра</h1>
     <div id="container"></div>
 
     <script type="text/babel">
@@ -75,6 +82,11 @@
                     bgColor: this.state.color
                 })
 
+                // focus on tag input
+                this._input.focus();
+                // clean input text
+                this._input.value = "";
+
                 e.preventDefault();
             }
 
@@ -83,16 +95,29 @@
                     backgroundColor: this.state.bgColor,
                 }
             
+                let self = this;
 
                 return (
                     <div className="colorArea">
                         <div style={squareStyle} className="colorSquare"></div>
 
                         <form onSubmit={this.setNewColor}>
-                            <input onChange={this.colorValue} placeholder="color value"></input>
+                            <input onChange={this.colorValue} placeholder="color value" ref={ el => self._input = el }></input>
                             <button type="submit">ok</button>    
                         </form>
+                        <ColorLabel color={this.state.bgColor}/>
                     </div>
+                )
+            }
+        }
+
+        let heading = document.querySelector('#colorHeading');
+
+        class ColorLabel extends React.Component {
+            render() {
+                return ReactDOM.createPortal(
+                    `: ${this.props.color}`,
+                    heading
                 )
             }
         }
